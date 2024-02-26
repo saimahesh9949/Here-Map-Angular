@@ -1,0 +1,15 @@
+<p class="text-blue-400 text-2xl bg-pink-300">Here Map....</p>
+<app-jsmap
+  [zoom]="zoom"
+  [lat]="lat"
+  [lng]="lng"
+  (notify)="handleMapChange($event)"
+></app-jsmap>
+<app-mapposition
+  [zoom]="zoom"
+  [lat]="lat"
+  [lng]="lng"
+  (notify)="handleInputChange($event)"
+></app-mapposition>
+<app-new-features></app-new-features>
+

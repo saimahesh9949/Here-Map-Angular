@@ -1,0 +1,57 @@
+<p>new-features works!</p>
+@for(user of users(); track $index){
+<p>{{user.name}}</p>
+}@empty {
+<p>We don't have anything</p>
+}
+
+
+@if(user.role == 'developer2'){
+  <div>if one</div>
+}
+@else if (user.role == 'developer1'){
+  <div> else if </div>
+} @else {
+<p>else</p>
+}
+
+
+@switch (user.role) {
+  @case ('developer2') {
+    <div>switch case 1</div>
+  }
+  @case ('developer1') {
+    <div>switch case 2 </div>
+  }
+}
+
+
+@defer(on viewport) {
+  <p>defer</p>
+  }
+  @loading(after 150ms; minimum 150ms){
+    <p>Loading.....</p>
+  }
+  @placeholder (minimum 150ms){
+    <p>placeholder</p>
+  }
+  @error {
+    <p>Error</p>
+  }
+
+<!-- @defer {
+<p>defer</p>
+}
+@loading(after 150ms; minimum 150ms){
+  <p>Loading.....</p>
+}
+@placeholder (minimum 150ms){
+  <p>placeholder</p>
+}
+@error {
+  <p>Error</p>
+} -->
+
+<!-- <div *ngFor="let item of users">
+<p>{{item.name}}</p>
+</div> -->
